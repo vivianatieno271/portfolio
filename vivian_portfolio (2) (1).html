@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivian Atieno Odhiambo | Lecturer & ICT Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D08A;
+    --gold-pale: #FBF6E8;
+    --dark: #0D0D0D;
+    --dark2: #1A1A1A;
+    --dark3: #2A2A2A;
+    --cream: #FAF7F0;
+    --text-main: #1A1A1A;
+    --text-muted: #6B6560;
+    --text-light: #9A948E;
+    --accent-teal: #1D9E75;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-main);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250,247,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.22) 0%, transparent 70%);
+  }
+
+  .hero-left::after {
+    content: 'VAO';
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 14rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.82rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6.5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.97;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+  }
+
+  .hero-name .highlight {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: transparent;
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-right {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 8rem 5rem 4rem 3rem;
+    position: relative;
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    width: 340px;
+    height: 440px;
+  }
+
+  .hero-photo-bg {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-pale);
+    border: 2px solid var(--gold-light);
+  }
+
+  .hero-photo-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #D4A853 0%, #8B6914 50%, #5A4009 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .avatar-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.25);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .avatar-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    width: 340px;
+  }
+
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 6rem; }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  /* ABOUT */
+  .about-section {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-accent-block {
+    background: var(--dark);
+    padding: 3rem;
+    position: relative;
+  }
+
+  .about-accent-block::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gold);
+    z-index: -1;
+  }
+
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-quote-author {
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .about-text strong { color: var(--dark); font-weight: 600; }
+
+  /* EXPERTISE */
+  .expertise-section { background: var(--cream); }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .expertise-card {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s;
+    cursor: default;
+  }
+
+  .expertise-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s;
+  }
+
+  .expertise-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+  .expertise-card:hover::before { transform: scaleX(1); }
+
+  .expertise-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .expertise-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--dark);
+  }
+
+  .expertise-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .expertise-num {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.1);
+    line-height: 1;
+  }
+
+  /* SKILLS */
+  .skills-section {
+    background: var(--dark);
+    color: var(--white);
+  }
+
+  .skills-section .section-title { color: var(--white); }
+
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 3rem;
+  }
+
+  .skill-group-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .skill-bar-item { margin-bottom: 1.8rem; }
+
+  .skill-bar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-bar-name {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+
+  .skill-bar-pct {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .skill-bar-track {
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 99px;
+    width: 0;
+    transition: width 1.2s ease;
+  }
+
+  .platforms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .platform-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s;
+  }
+
+  .platform-pill:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+  }
+
+  .platform-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* CERTIFICATIONS */
+  .certs-section {
+    background: var(--gold-pale);
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .cert-card {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 2rem 2.2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: all 0.3s;
+  }
+
+  .cert-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.12);
+  }
+
+  .cert-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .cert-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .cert-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .cert-badge {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.2rem 0.7rem;
+    background: var(--dark);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* EXPERIENCE */
+  .experience-section { background: var(--white); }
+
+  .timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 16px; height: 16px;
+    background: var(--gold);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-org {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .timeline-desc {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 7rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: 'CONNECT';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 14rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.02);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .contact-section .section-eyebrow {
+    justify-content: center;
+  }
+
+  .contact-section .section-eyebrow::after { display: none; }
+  .contact-section .section-eyebrow::before {
+    content: '';
+    width: 60px; height: 1px;
+    background: var(--gold);
+  }
+
+  .contact-section .section-title { color: var(--white); }
+
+  .contact-lead {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin: 1.2rem auto 3rem;
+    line-height: 1.75;
+  }
+
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 1.8rem 2.5rem;
+    min-width: 180px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .contact-card:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--gold);
+  }
+
+  .contact-card-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .contact-card-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card-value {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #050505;
+    padding: 2.5rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 1024px) {
+    nav { padding: 1rem 2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 7rem 2.5rem 3rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 2.5rem; }
+    .about-section { grid-template-columns: 1fr; gap: 3rem; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .skills-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .certs-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">V<span>.</span>A<span>.</span>O</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Educator · ICT Specialist · CPA Professional</p>
+    <h1 class="hero-name">Vivian<br><span class="highlight">Atieno</span><br>Odhiambo</h1>
+    <p class="hero-title">Lecturer | KENIA COLLEGE of Accountancy</p>
+    <p class="hero-desc">Passionate educator and ICT professional shaping the next generation of tech-savvy accountants and digital professionals in Kenya and beyond.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Hire Me</a>
+      <a href="#experience" class="btn-outline">View My Work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-bg"></div>
+      <div class="hero-photo-inner">
+        <div class="avatar-initials">VAO</div>
+        <div class="avatar-label">Vivian A. Odhiambo</div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Years Teaching</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3+</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">ICT</span>
+        <span class="stat-label">& CPA Expert</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="reveal">
+    <div class="about-accent-block">
+      <p class="about-quote">"Education is the most powerful weapon which you can use to change the world — I bring that power into every classroom."</p>
+      <p class="about-quote-author">— Vivian Atieno Odhiambo</p>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <p class="section-eyebrow">About Me</p>
+    <h2 class="section-title">Bridging Technology, Finance & Education</h2>
+    <p>I am <strong>Vivian Atieno Odhiambo</strong>, a dedicated lecturer at KENIA COLLEGE, where I teach <strong>Information & Communication Technology (ICT)</strong> and <strong>Certified Public Accountancy (CPA)</strong>. My mission is to equip students with both the technical acumen and financial literacy to thrive in today's digital economy.</p>
+    <p>With hands-on expertise in digital freelancing platforms including <strong>Ajira Digital</strong> and <strong>BrighterMonday</strong>, I bring real-world relevance to every lesson — connecting classroom theory to the opportunities of the modern gig and corporate economy.</p>
+    <p>I am certified, committed, and passionate about creating transformative learning experiences that open doors for my students — and I am eager to bring this energy to new institutional opportunities.</p>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise-section" id="expertise">
+  <div class="reveal">
+    <p class="section-eyebrow">What I Do</p>
+    <h2 class="section-title">Areas of Expertise</h2>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-card reveal">
+      <span class="expertise-num">01</span>
+      <div class="expertise-icon">💻</div>
+      <h3>ICT Instruction</h3>
+      <p>Teaching Information & Communication Technology to college students — from computer fundamentals to digital tools used in modern workplaces and businesses.</p>
+    </div>
+    <div class="expertise-card reveal">
+      <span class="expertise-num">02</span>
+      <div class="expertise-icon">📊</div>
+      <h3>CPA Teaching</h3>
+      <p>Delivering Certified Public Accountancy (CPA) curriculum with clarity and depth — helping students master financial reporting, auditing, and taxation principles.</p>
+    </div>
+    <div class="expertise-card reveal">
+      <span class="expertise-num">03</span>
+      <div class="expertise-icon">🌐</div>
+      <h3>Digital Freelancing</h3>
+      <p>Experienced with Ajira Digital and BrighterMonday platforms — skilled at connecting talent with opportunity and navigating the modern digital economy.</p>
+    </div>
+    <div class="expertise-card reveal">
+      <span class="expertise-num">04</span>
+      <div class="expertise-icon">🎓</div>
+      <h3>Curriculum Development</h3>
+      <p>Designing engaging, outcome-oriented lesson plans and educational materials that make complex subjects accessible and actionable for diverse learners.</p>
+    </div>
+    <div class="expertise-card reveal">
+      <span class="expertise-num">05</span>
+      <div class="expertise-icon">🤝</div>
+      <h3>Student Mentorship</h3>
+      <p>Guiding students through academic and career challenges — fostering confidence, professional development, and readiness for the job market.</p>
+    </div>
+    <div class="expertise-card reveal">
+      <span class="expertise-num">06</span>
+      <div class="expertise-icon">📱</div>
+      <h3>Digital Literacy Training</h3>
+      <p>Empowering learners with practical digital skills — from productivity software to online platforms that enhance employability and entrepreneurship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="reveal">
+    <p class="section-eyebrow">Skills & Tools</p>
+    <h2 class="section-title">Professional Proficiency</h2>
+  </div>
+  <div class="skills-layout">
+    <div class="reveal">
+      <p class="skill-group-label">Core Competencies</p>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">ICT Teaching & Curriculum Design</span>
+          <span class="skill-bar-pct">95%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">CPA Instruction & Accounting Principles</span>
+          <span class="skill-bar-pct">92%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">Microsoft Office Suite & Digital Tools</span>
+          <span class="skill-bar-pct">90%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">E-Learning & Online Instruction</span>
+          <span class="skill-bar-pct">85%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">Research & Academic Writing</span>
+          <span class="skill-bar-pct">88%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="skill-group-label">Platforms & Digital Presence</p>
+      <div class="platforms-grid">
+        <div class="platform-pill"><div class="platform-dot"></div>Ajira Digital</div>
+        <div class="platform-pill"><div class="platform-dot"></div>BrighterMonday</div>
+        <div class="platform-pill"><div class="platform-dot"></div>Microsoft Teams</div>
+        <div class="platform-pill"><div class="platform-dot"></div>Google Classroom</div>
+        <div class="platform-pill"><div class="platform-dot"></div>Zoom & Webinars</div>
+        <div class="platform-pill"><div class="platform-dot"></div>KASNEB Resources</div>
+        <div class="platform-pill"><div class="platform-dot"></div>KNEC Standards</div>
+        <div class="platform-pill"><div class="platform-dot"></div>Learning Management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section" id="certifications">
+  <div class="reveal">
+    <p class="section-eyebrow">Credentials</p>
+    <h2 class="section-title">Awards & Certifications</h2>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <h4>Ajira Digital Certification</h4>
+        <p>Awarded for demonstrated proficiency in digital freelancing, online work platforms, and Kenya's digital economy ecosystem under the Ajira Digital Programme.</p>
+        <span class="cert-badge">Certified</span>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🥇</div>
+      <div class="cert-body">
+        <h4>BrighterMonday Professional Certificate</h4>
+        <p>Recognition for expertise in professional recruitment, career development platforms, and digital talent matching within the East African job market.</p>
+        <span class="cert-badge">Awarded</span>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">📋</div>
+      <div class="cert-body">
+        <h4>ICT Instruction & Pedagogy</h4>
+        <p>Formal qualification in teaching ICT at the college level, covering instructional methodology, digital tools integration, and student assessment.</p>
+        <span class="cert-badge">Qualified</span>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">💼</div>
+      <div class="cert-body">
+        <h4>CPA Examination Preparation</h4>
+        <p>Recognised expertise in CPA curriculum delivery and student examination preparation aligned with KASNEB standards and professional accounting frameworks.</p>
+        <span class="cert-badge">Recognised</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section" id="experience">
+  <div class="reveal">
+    <p class="section-eyebrow">Career Journey</p>
+    <h2 class="section-title">Experience & Background</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <p class="timeline-date">Present</p>
+      <h3 class="timeline-role">Lecturer — ICT & CPA</h3>
+      <p class="timeline-org">KENIA COLLEGE, Nairobi, Kenya</p>
+      <p class="timeline-desc">Delivering high-quality ICT and CPA instruction to undergraduate and diploma students. Developing curriculum materials, conducting assessments, and mentoring students toward professional and academic excellence. Integrating digital platforms and real-world tools into classroom learning to maximise student employability.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <p class="timeline-date">Ongoing</p>
+      <h3 class="timeline-role">Digital Skills Trainer</h3>
+      <p class="timeline-org">Ajira Digital Programme</p>
+      <p class="timeline-desc">Training youth and professionals in online freelancing skills, digital platforms, and remote work readiness. Facilitating sessions that connect learners to income-generating opportunities through Kenya's growing digital economy.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <p class="timeline-date">Active</p>
+      <h3 class="timeline-role">Career & Talent Professional</h3>
+      <p class="timeline-org">BrighterMonday East Africa</p>
+      <p class="timeline-desc">Engaged with BrighterMonday's ecosystem to support professional development and digital recruitment. Advising students and early-career professionals on career positioning and digital job market navigation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <p class="section-eyebrow">Get In Touch</p>
+  <h2 class="section-title">Let's Work Together</h2>
+  <p class="contact-lead">Open to new lecturing opportunities, curriculum consulting, digital training engagements, and collaborative educational projects across Kenya.</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <p class="contact-card-label">Location</p>
+      <p class="contact-card-value">Nairobi, Kenya</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🎓</div>
+      <p class="contact-card-label">Institution</p>
+      <p class="contact-card-value">KENIA COLLEGE</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">💼</div>
+      <p class="contact-card-label">Availability</p>
+      <p class="contact-card-value">Open to Opportunities</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🌐</div>
+      <p class="contact-card-label">Digital Presence</p>
+      <p class="contact-card-value">Ajira · BrighterMonday</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <p class="contact-card-label">Email</p>
+      <p class="contact-card-value"><a href="mailto:odhiambovivian586@gmail.com" style="color:inherit;text-decoration:none;word-break:break-all;">odhiambovivian586@gmail.com</a></p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📞</div>
+      <p class="contact-card-label">Phone</p>
+      <p class="contact-card-value"><a href="tel:+254701760866" style="color:inherit;text-decoration:none;">+254 701 760 866</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Vivian <span>Atieno</span> Odhiambo</div>
+  <p class="footer-copy">© 2025 Vivian Atieno Odhiambo · Lecturer · ICT & CPA Professional</p>
+</footer>
+
+<script>
+  // Enhanced smooth scrolling with easing
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const start = window.scrollY;
+      const targetY = target.getBoundingClientRect().top + window.scrollY - 72;
+      const distance = targetY - start;
+      const duration = 900;
+      let startTime = null;
+
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+      }
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        window.scrollTo(0, start + distance * easeInOutCubic(progress));
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Skill bar animation
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.skills-layout').forEach(el => skillObserver.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
